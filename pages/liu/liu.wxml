@@ -1,0 +1,67 @@
+<!--pages/liu/liu.wxml-->
+<view>{{text}}</view>
+<view>{{'1' + 1}}</view>
+
+<!-- 
+  列表循环 wx:for={{数组或者对象}}
+    wx:for-item="循环名称"
+    wx:for-index="索引"
+    wx:key="唯一的值" 提高列表的渲染属性 
+      1：名称是循环对象中的唯一属性
+      2：wx:key="*this" 代表for循环中的item本身，用在item本身就是字符串和数据
+      3：当出现数组循环嵌套的时候，尤其要注意：绑定的名称不要重复
+      4：默认情况下，我们不写  wx:for-item="item" wx:for-index="index"
+        小程序也会把循环项的名称变为item，key变为index
+        只有一层循环 可以省略
+
+  对象循环
+    wx:for="{{对象}}"   wx:for-item="对象的值" wx:for-index="对象的key"
+    最好全写
+
+  block标签
+    占位符的标签
+    写代码的时候可以看到这个标签的存在
+    页面渲染，小程序会把它移除掉
+
+  -->
+<view wx:for="{{arr}}" wx:for-item="item" wx:for-index="index">
+{{index}}:{{item.name}}
+</view>
+<!-- 
+  使用bool类型充当属性的时候，花括号之间一定不能有空格，否则会导致识别失败
+  以下写法是错误的写法
+    <view checked="   {{checked}}"></view>
+ -->
+
+ <!-- 
+   1：条件渲染
+   <1:>wx:if="{{true/false}}"
+      wx:if
+      wx:elif
+      wx:else
+
+    <2>hidden
+      1:在标签上直接加入属性 hidden
+      2:hidden = "{{true}}"
+
+    <3> 区别
+      当标签不是频繁切换的时候，优先使用wx:if,它会把标签直接从DOM删除
+      当标签频繁切换的时候 优先使用hidden,它通过css样式进行切换，
+      注意：hidden不要和样式display一起使用，会失效
+   -->
+
+   <!-- 
+     事件绑定
+    1: 绑定input关键字 bindinput
+    2：通过e.detail.value来获取输入框的值
+    3：动态更改数据的方式 this.setData({num:e.detail.value})
+    4: 需要加入一个点击事件
+      bindtap
+      无法在小程序当中的 事件中 直接传参 hanldeClick(1)错误
+      通过自定义属性的方式来传递参数  data-add="{{1}}"
+      事件源中获取 自定义属性 e.currentTarget.dataset
+   -->
+   <input type="text" bindinput="handleInput" />
+   <button bindtap="hanldeClick" data-add="{{1}}">+</button>
+   <view>{{num}}</view>
+
