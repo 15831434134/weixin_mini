@@ -1,0 +1,10 @@
+text {
+  color: yellow;
+}
+swiper{
+  width: 100%;
+  height:calc(520 / 280 * 100v)
+}
+image{
+  width: 100%;
+}

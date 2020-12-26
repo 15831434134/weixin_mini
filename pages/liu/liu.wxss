@@ -29,3 +29,14 @@ view{
   1：使用 @import ''
   2: 路径只支持相对路径
 */
+
+/*
+微信小程序中使用less
+1:使用vscode编辑器
+2：下载easy-less插件
+3：vscode settings.json中配置 { "less.compile": {
+        "outExt": ".wxss"
+    }
+4：新增以.less文件结尾的less,在保存的时候就自动生成wxss并且会自动转化了
+*/
+
