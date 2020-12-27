@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/iconfont/iconfont",
+    "pages/life/life",
+    "pages/comFirst/comFirst",
     "pages/lessed/lessed",
     "pages/liu/liu",
     "pages/index/index",
@@ -7,9 +10,11 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#DDDDDD",
     "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#FFEEDD"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

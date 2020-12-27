@@ -1,39 +1,42 @@
 //app.js
+// 生命周期分为页面的生命周期和应用的生命周期
+// app.js是应用的生命周期,页面的生命周期文件夹下面的为life
 App({
-  onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    })
+  // 1：应用第一次启动的时候就会触发的事件
+  onLaunch(){
+    console.log('onLaunch')
+    //不能触发onPageNotFound事件
+    // wx.navigateTo({
+    //   url: '/11/22/33',
+    // })
   },
-  globalData: {
-    userInfo: null
+
+  // 2:应用被用户看到时候触发的事件，比如来回切换后台又返回时
+  onShow(){
+    // 对应的数据或者页面效果 重置
+    console.log('onShow')
+  },
+
+  //3:应用被隐藏
+  onHide(){
+    //暂停或者清除定时器
+    console.log('onHide')
+  },
+
+  //4:应用代码发生了错误的时候，就会触发
+  onError(err){
+    // 在应用发生代码错误的时候，收集用户的错误信息，通过异步的请求，将错误的信息发送到后台
+    console.log('错误了')
+
+  },
+
+  // 5:页面找不到就会触发
+  // 应用第一次启动的时候，如果找不到第一个入口，就会触发
+  onPageNotFound(){
+    // 如果页面不存在了，通过js的方式来重新跳转页面，重新跳转到第二个首页
+    console.log('onPageNotFpund')
+    wx.navigateTo({
+      url: '/pages/liu/liu',
+    })
   }
 })

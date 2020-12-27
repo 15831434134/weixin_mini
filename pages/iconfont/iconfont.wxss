@@ -1,0 +1,11 @@
+/* pages/iconfont/iconfont.wxss */
+
+view{
+  /* 使用全局主题颜色 */
+  color:var(--themeColor);
+}
+
+/* less中转wxss注意事项
+  使用calc正确方式，让wxss识别
+  height:~'calc()'
+*/

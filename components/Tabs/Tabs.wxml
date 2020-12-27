@@ -1,0 +1,10 @@
+<!--components/Tabs/Tabs.wxml-->
+<text>components/Tabs/Tabs.wxml</text>
+<view bindtap="handleChange" data-index="1">{{aaa}}</view>
+<view>
+  <!-- 
+    slot 插槽
+    父组件调用子组件的时候传递，这些传递过来的标签最终会取代slot的位置
+   -->
+   <slot></slot>
+</view>

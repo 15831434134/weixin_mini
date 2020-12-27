@@ -1,28 +1,19 @@
-// pages/lessed/lessed.js
+// pages/comFirst/comFirst.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    html:'<p>123</p>',
-    gender:''
+    a:'123'
   },
 
-  getPhoneNumber(value){
-    console.log(value)
-  },
-  getUserInfo(e){
-    console.log(e)
-  },
-  openSetting(e){
-    console.log(e)
-  },
-  handleChange(e){
-    console.log(e)
-    this.setData({
-      gender:e.detail.value
-    })
+  handleItems(e){
+    let {index} = e.detail
+    console.log(index)
+   this.setData({
+     a:index
+   })
   },
 
   /**

@@ -1,10 +1,18 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+/* 微信小程序中不支持通配符 *号 */
+@import './pages/style/iconfont.wxss';
+page,view,text{
+  padding: 0;
+}
+
+/* 
+  主题颜色 通过变量来实现
+  1：less 中，存在变量这个知识
+  2：原生的css和wxss 也是支持
+  通过--前缀来定义,值不加''，直接写  使用:var(--name)
+*/
+page{
+  /* 定义主题颜色 */
+  --themeColor:#eb4450;
+  font-size: 28rpx;
+}

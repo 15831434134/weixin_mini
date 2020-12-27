@@ -1,0 +1,22 @@
+<!--pages/iconfont/iconfont.wxml-->
+<!-- 
+  引入阿里巴巴 iconfont步骤
+  1：打开iconfont官网，下载图标，生成在线地址，复制在线内容
+  2:在app.wxss全局引入
+  4:使用方法如下
+
+  5：
+  小程序上线时配置url地址合法方式，添加方式
+   1：打开微信公众平台，进行登录
+   2：点击开发>开发设置>服务器域名>request合法域名>进行添加
+  小程序测试时候的域名
+    1：点击详情，选中不校验合法域名
+
+  6:小程序中Storage 与 web 中的区别
+    1:小程序中存入什么数据格式就是什么数据格式，没用toString转化
+    2：名称不一样
+
+  7：小程序不支持async await语法，但是我也可以使用，看手机图片进行配置 哈哈
+ -->
+<text class="iconfont icon-bag"></text>
+<view>123</view>

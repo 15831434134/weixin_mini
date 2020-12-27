@@ -1,35 +1,22 @@
-// pages/lessed/lessed.js
+// pages/iconfont/iconfont.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    html:'<p>123</p>',
-    gender:''
-  },
 
-  getPhoneNumber(value){
-    console.log(value)
-  },
-  getUserInfo(e){
-    console.log(e)
-  },
-  openSetting(e){
-    console.log(e)
-  },
-  handleChange(e){
-    console.log(e)
-    this.setData({
-      gender:e.detail.value
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    // 调用微信接口，实现数据的异步请求
+    // wx.request({
+    //   url: 'url',
+    //   success: (result) => {},
+    // })
   },
 
   /**

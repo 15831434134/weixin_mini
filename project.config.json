@@ -4,7 +4,7 @@
     "ignore": []
   },
   "setting": {
-    "urlCheck": true,
+    "urlCheck": false,
     "es6": true,
     "enhance": false,
     "postcss": true,
@@ -39,8 +39,8 @@
     "minifyWXSS": true
   },
   "compileType": "miniprogram",
-  "libVersion": "2.0.4",
-  "appid": "wxe83a9d66db4d51c0",
+  "libVersion": "2.13.1",
+  "appid": "wx1766a0ef01fc9895",
   "projectname": "miniprogram-1",
   "debugOptions": {
     "hidedInDevtools": []
@@ -50,23 +50,23 @@
   "simulatorType": "wechat",
   "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "list": []
-    },
-    "conversation": {
+    "plugin": {
       "list": []
     },
     "game": {
-      "list": []
-    },
-    "plugin": {
       "list": []
     },
     "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "list": []
+      "list": [
+        {
+          "name": "nopage",
+          "pathName": "pages/comFaairst/comFirst",
+          "scene": null
+        }
+      ]
     }
   }
 }

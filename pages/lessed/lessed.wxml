@@ -79,3 +79,55 @@ pages/lessed/lessed.wxml
     2：接收数组对象
   -->
 <rich-text nodes="{{html}}"></rich-text>
+
+<!-- 
+  button
+  1:外观设置 size type plain loading
+  2:开放能力 open-type
+    1:contact 直接打开客会话功能，需要在微信小程序后台配置
+    2:share 转发当前小程序，到微信朋友中,但是不能分享到朋友圈中
+    3:getPhoneNumber 获取当前用户的手机号，结合一个事件使用，不是企业的小程序账号，没有权限来获取
+      1:绑定一个事件：bindgetphonenumber
+      2:在事件回调函数中，通过参数来获取信息
+      3:获取到的用户信息，已经加密，需要用户自己配置接口，解析手机号，返回小程序中，看到信息
+    4:getUserInfo 获取当前用户的个人信息
+      1：使用方法类似获取用户的手机号码
+      2：可以直接获取，不存在加密字段
+    5:launchApp 在小程序中，直接打开app
+      1:需要在app中，通过app的某个链接打开小程序
+      2：在小程序中，通过这个功能，重新打开app
+    6:openSetting 打开小程序内置的授权页面
+      1:授权页面中，只会出现用户曾经点击过的权限
+    7:feedback 打开小程序内置的意见反馈页面
+      1:只能够通过真机调试打开
+ -->
+ <button open-type="contact">contact</button>
+ <button open-type="share">share</button>
+ <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+ <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">getUserInfo</button>
+ <button open-type="launchApp">launchApp</button>
+ <button open-type="openSetting" bindopensetting="openSetting">openSetting</button>
+ <button open-type="feedback">feedback</button>
+
+ <!-- 
+   icon type size color
+  -->
+  <icon type="success" size="12"></icon>
+
+  <!-- 
+    radio checkbox
+    1:必须和父元素 radio-group checkbox-group来使用
+    2：value 选中的单选框的值
+    3：需要给 radio-group绑定change事件
+    4:color 设置选中的颜色
+   -->
+   <view>
+     <radio-group bindchange="handleChange">
+       <radio value="man">男</radio>
+       <radio value="women">女</radio>
+     </radio-group>
+     <text>{{gender}}</text>
+   </view>
+
+
+
