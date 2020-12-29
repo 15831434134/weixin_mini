@@ -10,6 +10,9 @@
     1：子组件中的方法中通过this.triggerEvent(必须这么写)触发一个事件
     2:在子组件的标签上加一个自定义事件,通过detail获取
   7:slot 在子组件中有详细用法
+  8：获取收收获地址 wx.choseAddress
+  9: 获取权限 wx.getSetting
+  10:打开权限设置 wx.openSetting
  -->
 <Tabs aaa="{{a}}" binditemsChange="handleItems">
   {{a}}---123
